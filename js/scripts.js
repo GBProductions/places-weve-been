@@ -38,6 +38,18 @@ function Destination(location, landmarks, season, notes) {
 
 let placesWeveBeen = new PlacesWeveBeen();
 
+function displayPlacesDetails(placesWeveBeenToDisplay) {
+  let placesList = $("ul#places");
+  let htmlForPlacesInfo = "";
+  placesWeveBeenToDisplay.destinations.forEach(function(destination) {
+    htmlForPlacesInfo += "<li id=" + destination.id + ">" + destination.location + destination.landmarks + destination.season + destination.notes + "</li>";
+  });
+  placesList.html(htmlForPlacesInfo);
+};
+
+
+
+ 
 $(document).ready(function() {
   $("form#inputForm").submit(function(event) {
     event.preventDefault();
@@ -47,6 +59,8 @@ $(document).ready(function() {
     const inputtedNotes = $("input#notes").val();
     let newDestination = new Destination(inputtedLocation, inputtedLandmarks, inputtedSeason, inputtedNotes);
     placesWeveBeen.addDestination(newDestination);
-    console.log(placesWeveBeen.destinations);
+    displayPlacesDetails(placesWeveBeen);
+
+    
   });
 });
