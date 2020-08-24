@@ -21,4 +21,7 @@ function Destination(location, landmarks, timeOfYear, notes) {
 
 
 let placesWeveBeen = new PlacesWeveBeen();
-let destination = new Destination("Portland", "Moda Center", )
+let destination = new Destination("Portland", "Moda Center", "Spring", "Cherry blossoms bloom");
+let destination2 = new Destination("Seattle", "Gum Wall", "Winter", "sticky");
+placesWeveBeen.addDestination(destination);
+placesWeveBeen.addDestination(destination2);
